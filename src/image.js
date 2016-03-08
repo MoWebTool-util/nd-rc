@@ -8,7 +8,7 @@ import React, { Component, PropTypes } from 'react'
 import ReactSpinner from './spinner'
 import autobind from 'core-decorators/lib/autobind'
 
-class ImageX extends Component {
+export default class ImageX extends Component {
   static propTypes = {
     src: PropTypes.string.isRequired,
     defaultSrc: PropTypes.string,
@@ -139,5 +139,3 @@ class ImageX extends Component {
     onError && onError()
   }
 }
-
-export default ImageX

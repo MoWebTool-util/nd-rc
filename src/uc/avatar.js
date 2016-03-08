@@ -8,7 +8,7 @@ import React, { Component, PropTypes } from 'react'
 import Image from '../image'
 import { AVATAR_URL } from '../utils/env'
 
-class Avatar extends Component {
+export default class Avatar extends Component {
   static propTypes = {
     uid: PropTypes.string.isRequired,
     realm: PropTypes.string,
@@ -27,5 +27,3 @@ class Avatar extends Component {
     return <Image src={src} {...other} />
   }
 }
-
-export default Avatar
