@@ -1,0 +1,20 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "standard",
+    "standard-react"
+  ],
+  "plugins" : [
+    "flow-vars"
+  ],
+  "env"     : {
+    "browser" : true
+  },
+  "rules": {
+    /*"semi" : [2, "never"], // standard style had defined */
+    "jsx-quotes": [2, "prefer-double"],
+    "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }],
+    "flow-vars/define-flow-type": 1,
+    "flow-vars/use-flow-type": 1
+  }
+}
