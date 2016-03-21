@@ -6,7 +6,6 @@
 
 import React, { Component, PropTypes } from 'react'
 import ReactSpinner from './spinner'
-import autobind from 'core-decorators/lib/autobind'
 
 export default class ImageX extends Component {
   static propTypes = {
@@ -107,15 +106,13 @@ export default class ImageX extends Component {
     }
   }
 
-  @autobind
   _loadImage() {
     let image = new Image()
-    image.onload = this._onLoad
-    image.onerror = this._onError
+    image.onload = ::this._onLoad
+    image.onerror = ::this._onError
     image.src = this.src
   }
 
-  @autobind
   _onLoad() {
     const { onLoad } = this.props
 
@@ -125,7 +122,6 @@ export default class ImageX extends Component {
     onLoad && onLoad()
   }
 
-  @autobind
   _onError() {
     const { onError, defaultSrc } = this.props
 
