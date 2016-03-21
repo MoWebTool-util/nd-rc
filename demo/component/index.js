@@ -1,9 +1,11 @@
 import Image from './Image'
 import Avatar from './uc/Avatar'
+import Tree from './tree'
 
 export default {
   COMMON: {
-    Image
+    Image,
+    Tree
   },
   UC: {
     Avatar

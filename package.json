@@ -47,7 +47,9 @@
   "dependencies": {
     "core-decorators": "^0.11.0",
     "core-js": "2.1.1",
-    "spin.js": "^2.3.2"
+    "rc-tree": "^1.1.6",
+    "spin.js": "^2.3.2",
+    "velocity-animate": "^1.2.3"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
