@@ -39,7 +39,7 @@ module.exports = function (config) {
     webpack: {
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ['', '.js', '.jsx', '.json'],
+        extensions: ['', '.js', '.jsx', '.json', '.css'],
         alias: {
           'sinon': 'sinon/pkg/sinon'
         }
@@ -60,6 +60,13 @@ module.exports = function (config) {
         }, {
           test: /sinon(\\|\/)pkg(\\|\/)sinon\.js/,
           loader: 'imports?define=>false,require=>false'
+        }, {
+          test: /\.css$/,
+          loaders: [
+            'style',
+            'css?sourceMap&-minimize&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            'postcss'
+          ]
         }],
         preLoaders: [{
           test: /\.(js|jsx)$/,
