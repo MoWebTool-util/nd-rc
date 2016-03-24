@@ -25,6 +25,15 @@ export default class AvatarDemo extends Component {
           uid={this.state.uid}
           defaultSrc={defaultSrc}
           spinnerContainerClassName={styles['spin-container']}/>
+        <br />
+        <br />
+        <Avatar
+          uid={this.state.uid}
+          defaultSrc={defaultSrc}
+          cache={false}
+          width="200"
+          height="200"
+        />
       </div>
     )
   }

@@ -77,7 +77,13 @@ export default class ImageX extends Component {
         if (Spinner) {
           return React.createElement(Spinner)
         } else {
-          return <ReactSpinner config={spinnerConfig} containerClassName={spinnerContainerClassName} />
+          return (
+            <ReactSpinner
+              config={spinnerConfig}
+              containerWidth={other.width}
+              containerHeight={other.height}
+              containerClassName={spinnerContainerClassName} />
+          )
         }
       } else {
         return null

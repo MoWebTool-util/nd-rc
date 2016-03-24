@@ -6,13 +6,14 @@ export default class ReactSpinner extends React.Component {
     // see `http://fgnass.github.io/spin.js` for all options
     config: PropTypes.object,
     color: PropTypes.string.isRequired,
-    containerClassName: PropTypes.string
+    containerClassName: PropTypes.string,
+    containerWidth: PropTypes.string,
+    containerHeight: PropTypes.string
   }
 
   static defaultProps = {
     config: {},
-    color: 'black',
-    containerClassName: ''
+    color: 'black'
   }
 
   componentDidMount() {
@@ -35,12 +36,20 @@ export default class ReactSpinner extends React.Component {
   }
 
   render() {
+    const { containerWidth, containerHeight } = this.props
+
+    const styles = {
+      position: 'relative',
+      display: 'inline-block',
+      width: containerWidth,
+      height: containerHeight
+    }
+
     return (
       <span
         ref="container"
         className={this.props.containerClassName}
-        style={{position: 'relative'}}
-      />
+        style={styles}/>
     )
   }
 }
