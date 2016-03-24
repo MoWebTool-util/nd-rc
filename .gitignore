@@ -5,7 +5,7 @@ coverage
 test/coverage
 
 # Exclude compiled files
-lib
+# lib
 
 # Exclude IDE project folders
 .idea
