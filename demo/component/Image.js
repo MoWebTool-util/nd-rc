@@ -13,7 +13,7 @@ export default class ImageDemo extends Component {
     return (
       <div>
         <button onClick={::this._handleClick}>update</button>
-        <Image src={this.state.src}/>
+        <Image src={this.state.src} isShowSpinner/>
       </div>
     )
   }

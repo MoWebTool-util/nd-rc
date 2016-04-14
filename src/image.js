@@ -22,7 +22,7 @@ export default class ImageX extends Component {
 
   static defaultProps = {
     cache: true,
-    isShowSpinner: true
+    isShowSpinner: false
   }
 
   constructor(props) {
@@ -35,7 +35,8 @@ export default class ImageX extends Component {
   }
 
   componentDidMount() {
-    this._loadImage()
+    const { isShowSpinner } = this.props
+    isShowSpinner && this._loadImage()
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,7 +53,8 @@ export default class ImageX extends Component {
   }
 
   componentDidUpdate() {
-    if (!this.state.loaded) {
+    const { isShowSpinner } = this.props
+    if (isShowSpinner && !this.state.loaded) {
       this._loadImage()
     }
   }
@@ -70,10 +72,10 @@ export default class ImageX extends Component {
       ...other } = this.props
     const { loaded } = this.state
 
-    if (loaded) {
-      return <img src={this.src} {...other}/>
-    } else {
-      if (isShowSpinner) {
+    if (isShowSpinner) {
+      if (loaded) {
+        return <img src={this.src} {...other} />
+      } else {
         if (Spinner) {
           return React.createElement(Spinner)
         } else {
@@ -85,9 +87,9 @@ export default class ImageX extends Component {
               containerClassName={spinnerContainerClassName} />
           )
         }
-      } else {
-        return null
       }
+    } else {
+      return <img src={this.src} {...other} onError={::this._onError}/>
     }
   }
 
