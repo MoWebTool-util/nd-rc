@@ -28,10 +28,13 @@ export default class ImageX extends Component {
   constructor(props) {
     super(props)
 
-    this.src = props.src
     this.state = {
       loaded: false
     }
+  }
+
+  componentWillMount() {
+    this.src = this.props.src
   }
 
   componentDidMount() {
